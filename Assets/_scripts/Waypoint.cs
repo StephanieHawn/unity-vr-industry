@@ -62,10 +62,12 @@ public class Waypoint : MonoBehaviour
 		_audio_source.playOnAwake 	= false;
 	}
 
+	//public GameObject player;
 
 	void Update()
 	{
 		bool occupied 	= Camera.main.transform.position == gameObject.transform.position;
+		//bool occupied 	= player.transform.position == gameObject.transform.position;
 		
 		switch(_state)
 		{
@@ -129,8 +131,10 @@ public class Waypoint : MonoBehaviour
 		_state = _state == State.Focused ? State.Clicked : _state;
 		
 		_audio_source.Play();
-
+		Debug.Log ("before ");
+		//player.transform.position = gameObject.transform.position;
 		Camera.main.transform.position 	= gameObject.transform.position;
+		Debug.Log ("after");
 	}
 
 
