@@ -17,6 +17,11 @@ public class PlayAudio : MonoBehaviour {
 	}
 
 	public void PlayAudioSource(GvrAudioSource gvrAudio){
-		gvrAudio.Play ();
+		//gvrAudio.Play ();
+		if (gvrAudio.isPlaying) {
+			gvrAudio.Pause ();
+		} else {
+			gvrAudio.Play ();
+		}
 	}
 }
