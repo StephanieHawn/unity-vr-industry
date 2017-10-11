@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayAudio : MonoBehaviour {
 
-	public GvrAudioSource gvrAudio;
+	public GvrAudioSource background;
 
 	// Use this for initialization
 	void Start () {
@@ -16,12 +16,14 @@ public class PlayAudio : MonoBehaviour {
 		
 	}
 
-	public void PlayAudioSource(GvrAudioSource gvrAudio){
+	public void PlayAudioSource(GvrAudioSource stationAudio){
 		//gvrAudio.Play ();
-		if (gvrAudio.isPlaying) {
-			gvrAudio.Pause ();
+		if (stationAudio.isPlaying) {
+			stationAudio.Pause ();
+			background.Play ();
 		} else {
-			gvrAudio.Play ();
+			stationAudio.Play ();
+			background.Pause ();
 		}
 	}
 }
